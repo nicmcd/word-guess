@@ -7,20 +7,17 @@ DEBUG = True
 secret_index = random.randint(0, len(five.words))
 secret_word = five.words[secret_index]
 if DEBUG:
-    print "secret word is " + secret_word
+    print "DEBUG: secret word is " + secret_word
 
 # show the game banner
-print "   -----------------------"
-print "   - Welcome to Nineteen -"
-print "   -----------------------"
+print "   -------------------------------"
+print "   - Welcome to Nineteen Guesses -"
+print "   -------------------------------"
 print ""
 
 # instruct the user how to play
-print "Instructions:"
-print "I have chosen a random 5 letter word."
-print "You have 19 guesses to guess the word."
-print "I'll give you hints along the way."
-print "Good Luck!"
+print "I have chosen a random 5 letter word and you have 19 guesses."
+print "I'll give you hints along the way. Good Luck!"
 print ""
 
 # give the user 19 guesses in a loop
@@ -68,7 +65,7 @@ while (not user_won) and (used_guesses < allowed_guesses):
                     secret_list[index] = '-'
                     guess_list[index] = '-'
                     if DEBUG:
-                        print "match at index " + str(index)
+                        print "DEBUG: match at index " + str(index)
 
             # give the user the hint
             print str(matched_letters) + " of your letters",
@@ -98,8 +95,9 @@ while (not user_won) and (used_guesses < allowed_guesses):
                                 secret_list[secret_index] = '-'
                                 found_mislocated = True
                                 if DEBUG:
-                                    print "mislocation at secret[" + str(secret_index) + \
-                                        "] and guess["+ str(guess_index) +"]"
+                                    print "DEBUG: mislocation at secret[" + \
+                                        str(secret_index) + "] and guess[" + \
+                                        str(guess_index) +"]"
                                 break;
 
             # give the user the hint
